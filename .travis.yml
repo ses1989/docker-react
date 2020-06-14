@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ses1989/reactapp -f Dockerfile.dev .
+
+script:
+  - docker run ses1989/reactapp npm run test -- --coverage

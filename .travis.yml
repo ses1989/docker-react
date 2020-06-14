@@ -6,4 +6,4 @@ before_install:
   - docker build -t ses1989/reactapp -f Dockerfile.dev .
 
 script:
-  - docker run ses1989/reactapp npm run test -- --coverage
+  - docker run -e CI=true ses1989/reactapp npm run test
